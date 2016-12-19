@@ -1,14 +1,14 @@
-	#QuickCraft
-  #By: DroidVengeance
-  #Version: 1.2
-  
-  #Main Options
-  menuname:
-      "&1Crafting Recipes"
+#QuickCraft
+#By: DroidVengeance
+#Version: 1.2
+ 
+#Main Options
+menuname:
+    "&1Crafting Recipes"
       
-	itemsmissing:
-      "&cYou don't have the required items to craft that!"
-      
-	sneakrightclick:
-      true
+Itemsmissing:
+    "&cYou don't have the required items to craft that!"
+     
+sneakrightclick:
+    true
 #Config ends
