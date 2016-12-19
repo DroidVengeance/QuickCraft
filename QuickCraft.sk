@@ -15,6 +15,15 @@ on script load:
 		set {itemsMissing} to single value "faq1Name" get of "plugins/LegitLandFAQ/config.yml" parsed as a string
 		wait 1 tick
 		set {sneakRightClick} to single value "faq1Lore" get of "plugins/LegitLandFAQ/config.yml" parsed as a boolean
+		stop
+	if existence of "plugins/QuickCraft/config/yml" is true:
+		wait 5 ticks
+		set {menuName} to single value "faq1Item" get of "plugins/LegitLandFAQ/config.yml" parsed as an item
+		wait 1 tick
+		set {itemsMissing} to single value "faq1Name" get of "plugins/LegitLandFAQ/config.yml" parsed as a string
+		wait 1 tick
+		set {sneakRightClick} to single value "faq1Lore" get of "plugins/LegitLandFAQ/config.yml" parsed as a boolean
+		stop
 
 
 
