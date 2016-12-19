@@ -1,5 +1,7 @@
 #Please don't edit anything below this line unless you know what you are doing!	
-
+variables:
+	{_craftam} = 0
+	{_loop} = 0
 #-----------------------------------------------------------------
 on rightclick on a crafting table:
 	if player has permission "quickcraft.use":
