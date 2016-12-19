@@ -3,12 +3,12 @@
 #Version: 1.2
  
 #Main Options
-menuname:
+menuName:
     "&1Crafting Recipes"
       
-Itemsmissing:
+itemsMissing:
     "&cYou don't have the required items to craft that!"
      
-sneakrightclick:
+sneakRightClick:
     true
 #Config ends
