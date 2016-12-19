@@ -22,7 +22,7 @@ on script load:
 #-----------------------------------------------------------------
 on rightclick on a crafting table:
 	if player has permission "quickcraft.use":
-		if {@sneakrightclick} is true:
+		if {sneakRightClick} is true:
 			player is sneaking
 			cancel event
 			make console execute command "/quickcraft %player%"
@@ -197,10 +197,10 @@ command /quickcraft <player>:
 		loop {craftlist.%player-arg%::*}:
 			add 1 to {_craftam}
 		if {_craftam} is below or equal to 9:
-			open chest with 1 row named {@menuname} to player-arg
+			open chest with 1 row named {menuName} to player-arg
 			wait 2 ticks
 		if {_craftam} is more than 9:
-			open chest with rounded up {_craftam} / 9 rows named {@menuname} to player-arg
+			open chest with rounded up {_craftam} / 9 rows named {menuName} to player-arg
 			wait 2 ticks
 		loop {craftlist.%player-arg%::*}:
 			format slot {_loop} of player-arg with loop-value to run "quickcraftrun %player-arg% %loop-value%"
@@ -628,7 +628,7 @@ command /quickcraftrun <player> <item>:
 				clear {craftlist.%player-arg%::*}
 				execute console command "/quickcraft %player-arg%"
 on inventory close:
-	inventory name of player's current inventory is {@menuname}
+	inventory name of player's current inventory is {menuName}
 	clear {craftlist.%player%::*}
 command /quickcraftdebug:
 	permission: quickcraft.debug
