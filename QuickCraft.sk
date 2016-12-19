@@ -1,0 +1,620 @@
+#Please don't edit anything below this line unless you know what you are doing!	
+
+#-----------------------------------------------------------------
+on rightclick on a crafting table:
+	if player has permission "quickcraft.use":
+		if {@sneakrightclick} is true:
+			player is sneaking
+			cancel event
+			make console execute command "/quickcraft %player%"
+		else:
+			cancel event
+      
+#-----------------
+#RECIPES:
+#-----------------
+command /quickcraft <player>:
+	executable by: console
+	trigger:
+		open chest with 1 row named "Loading..." to player-arg
+		if player-arg has 1 diamonds and 2 sticks:
+			add diamond shovel to {craftlist.%player-arg%::*}
+		if player-arg has 1 iron ingots and 2 sticks:
+			add iron shovel to {craftlist.%player-arg%::*}
+		if player-arg has 1 wooden planks and 2 sticks:
+			add wooden shovel to {craftlist.%player-arg%::*}
+		if player-arg has 1 cobble and 2 sticks:
+			add stone shovel to {craftlist.%player-arg%::*}
+		if player-arg has 1 gold ingots and 2 sticks:
+			add gold shovel to {craftlist.%player-arg%::*}
+		if player-arg has 2 diamonds and a stick:
+			add diamond sword to {craftlist.%player-arg%::*}
+		if player-arg has 2 iron ingots and a stick:
+			add iron sword to {craftlist.%player-arg%::*}
+		if player-arg has 2 wooden planks and a stick:
+			add wooden sword to {craftlist.%player-arg%::*}
+		if player-arg has 2 cobble and a stick:
+			add stone sword to {craftlist.%player-arg%::*}
+		if player-arg has 2 gold ingots and a stick:
+			add gold sword to {craftlist.%player-arg%::*}
+		if player-arg has 3 diamonds and a stick:
+			add diamond pickaxe to {craftlist.%player-arg%::*}
+		if player-arg has 3 iron ingots and a stick:
+			add iron pickaxe to {craftlist.%player-arg%::*}
+		if player-arg has 3 wooden planks and a stick:
+			add wooden pickaxe to {craftlist.%player-arg%::*}
+		if player-arg has 3 cobble and a stick:
+			add stone pickaxe to {craftlist.%player-arg%::*}
+		if player-arg has 3 gold ingots and a stick:
+			add gold pickaxe to {craftlist.%player-arg%::*}
+		if player-arg has 2 wheat and a cocoa beans:
+			add 8 cookies to {craftlist.%player-arg%::*}
+		if player-arg has 2 wooden planks:
+			add 4 sticks to {craftlist.%player-arg%::*}
+		if player-arg has wooden plank:
+			add wooden button to {craftlist.%player-arg%::*}
+		if player-arg has a oak log:
+			add 4 oak wooden planks to {craftlist.%player-arg%::*}
+		if player-arg has a birch log:
+			add 4 birch wooden planks to {craftlist.%player-arg%::*}
+		if player-arg has a redwood log:
+			add 4 redwood wooden planks to {craftlist.%player-arg%::*}
+		if player-arg has a jungle log:
+			add 4 jungle wooden planks to {craftlist.%player-arg%::*}
+		if player-arg has a acacia log:
+			add 4 acacia wooden planks to {craftlist.%player-arg%::*}
+		if player-arg has a dark oak log:
+			add 4 dark oak wooden planks to {craftlist.%player-arg%::*}
+		if player-arg has a coal item and a stick:
+			add 4 torches to {craftlist.%player-arg%::*}
+		if player-arg has 4 wooden planks:
+			add crafting table to {craftlist.%player-arg%::*}
+		if player-arg has 9 cobble:
+			add furnace off to {craftlist.%player-arg%::*}
+		if player-arg has 9 wooden planks:
+			add a chest to {craftlist.%player-arg%::*}
+		if player-arg has a chest and a tripwire hook:
+			add a trapped chest to {craftlist.%player-arg%::*}
+#Update 1
+		if player-arg has 7 sticks:
+			add 3 ladders to {craftlist.%player-arg%::*}
+		if player-arg has 4 wooden planks and 2 sticks:
+			add 3 fence to {craftlist.%player-arg%::*}
+		if player-arg has 5 wooden planks:
+			add boat to {craftlist.%player-arg%::*}
+		if player-arg has 8 sticks and a wool:
+			add painting item to {craftlist.%player-arg%::*}
+		if player-arg has 4 glowstone dust:
+			add glowstone to {craftlist.%player-arg%::*}
+		if player-arg has 3 wooden planks and 3 wool:
+			add bed to {craftlist.%player-arg%::*}
+		if player-arg has 3 sticks and 3 strings:
+			add bow to {craftlist.%player-arg%::*}
+		if player-arg has iron ingot and flint:
+			add a flint and steel to {craftlist.%player-arg%::*}
+		if player-arg has 3 iron ingots:
+			add bucket to {craftlist.%player-arg%::*}
+#Update 2 5/11/2016
+		if player-arg has 5 diamonds:
+			add diamond helmet to {craftlist.%player-arg%::*}
+		if player-arg has 8 diamonds:
+			add diamond chestplate to {craftlist.%player-arg%::*}
+		if player-arg has 7 diamonds:
+			add diamond leggings to {craftlist.%player-arg%::*}
+		if player-arg has 4 diamonds:
+			add diamond boots to {craftlist.%player-arg%::*}
+		if player-arg has 3 diamonds and a stick:
+			add diamond axe to {craftlist.%player-arg%::*}
+		if player-arg has 1 iron block:
+			add 9 iron ingots to {craftlist.%player-arg%::*}
+		if player-arg has 1 gold block:
+			add 9 gold ingots to {craftlist.%player-arg%::*}
+		if player-arg has 3 iron ingots and a stick:
+			add iron axe to {craftlist.%player-arg%::*}
+		if player-arg has 3 gold ingots and a stick:
+			add gold axe to {craftlist.%player-arg%::*}
+		if player-arg has 3 wood planks and a stick:
+			add wood axe to {craftlist.%player-arg%::*}
+		if player-arg has 5 iron ingots:
+			add iron helmet to {craftlist.%player-arg%::*}
+		if player-arg has 8 iron ingots:
+			add iron chestplate to {craftlist.%player-arg%::*}
+		if player-arg has 7 iron ingots:
+			add iron leggings to {craftlist.%player-arg%::*}
+		if player-arg has 4 iron ingots:
+			add iron boots to {craftlist.%player-arg%::*}
+		if player-arg has 5 gold ingots:
+			add gold helmet to {craftlist.%player-arg%::*}
+		if player-arg has 8 gold ingots:
+			add gold chestplate to {craftlist.%player-arg%::*}
+		if player-arg has 7 gold ingots:
+			add gold leggings to {craftlist.%player-arg%::*}
+		if player-arg has 4 gold ingots:
+			add gold boots to {craftlist.%player-arg%::*}
+		if player-arg has 5 leather:
+			add leather helmet to {craftlist.%player-arg%::*}
+		if player-arg has 8 leather:
+			add leather chestplate to {craftlist.%player-arg%::*}
+		if player-arg has 7 leather:
+			add leather leggings to {craftlist.%player-arg%::*}
+		if player-arg has 4 leather:
+			add leather boots to {craftlist.%player-arg%::*}
+		if player-arg has 3 sugar cane:
+			add 3 paper to {craftlist.%player-arg%::*}
+		if player-arg has 2 iron ingots:
+			add shears to {craftlist.%player-arg%::*}
+		if player-arg has a flint and a stick and a feather:
+			add 4 arrows to {craftlist.%player-arg%::*}
+		if player-arg has 4 string and a slimeball:
+			add lead to {craftlist.%player-arg%::*}
+		if player-arg has 4 iron ingot and a redstone:
+			add compass to {craftlist.%player-arg%::*}
+		if player-arg has 4 gold ingot and a redstone:
+			add clock to {craftlist.%player-arg%::*}
+		if player-arg has 1 bone:
+			add 3 bonemeal to {craftlist.%player-arg%::*}
+		if player-arg has 6 iron ingots and a stick:
+			add 16 rail to {craftlist.%player-arg%::*}
+		if player-arg has 6 gold ingots and a stick and a redstone:
+			add 6 powered rail to {craftlist.%player-arg%::*}
+		if player-arg has 6 iron ingots and a stick and a stone plate:
+			add 6 detector rail to {craftlist.%player-arg%::*}
+		if player-arg has 6 iron ingots and 2 stick and a redstone torch:
+			add 6 activator rail to {craftlist.%player-arg%::*}
+		if player-arg has 5 iron ingots and a chest and a redstone comparator item:
+			add hopper named "&fSorter" to {craftlist.%player-arg%::*}
+		if player-arg has a stick and a redstone:
+			add redstone torch to {craftlist.%player-arg%::*}
+		if player-arg has 3 paper and a leather:
+			add book to {craftlist.%player-arg%::*}
+		if player-arg has 5 iron ingots:
+			add minecart item to {craftlist.%player-arg%::*}
+		if player-arg has 6 leather and 1 iron ingot and 1 lead:
+			add saddle to {craftlist.%player-arg%::*}
+		
+#-----------------
+#MENU:
+#-----------------
+		loop {craftlist.%player-arg%::*}:
+			add 1 to {_craftam}
+		if {_craftam} is below or equal to 9:
+			open chest with 1 row named {@menuname} to player-arg
+			wait 2 ticks
+		if {_craftam} is more than 9:
+			open chest with rounded up {_craftam} / 9 rows named {@menuname} to player-arg
+			wait 2 ticks
+		loop {craftlist.%player-arg%::*}:
+			format slot {_loop} of player-arg with loop-value to run "quickcraftrun %player-arg% %loop-value%"
+			add 1 to {_loop}
+#-----------------
+#COMMANDS:
+#-----------------
+command /quickcraftrun <player> <item>:
+	permission: quickcraft.use
+	trigger:
+		if item-arg is iron helmet:
+			if player-arg has 5 iron ingot:
+				remove 5 iron ingot from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is iron chestplate:
+			if player-arg has 8 iron ingot:
+				remove 8 iron ingot from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is iron leggings:
+			if player-arg has 7 iron ingot:
+				remove 7 iron ingot from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is iron boots:
+			if player-arg has 4 iron ingot:
+				remove 4 iron ingot from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is saddle:
+			if player-arg has 6 leather and 1 iron ingot and 1 lead:
+				remove 6 leather and 1 iron ingot and 1 lead from player-arg
+				give item-arg with name "&fSorter" to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is minecart:
+			if player-arg has 5 iron ingots:
+				remove 5 iron ingots from player-arg
+				give item-arg with name "&fSorter" to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is book:
+			if player-arg has 3 paper and a leather:
+				remove 3 paper and a leather from player-arg
+				give item-arg with name "&fSorter" to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is redstone torch:
+			if player-arg has a stick and a redstone:
+				remove a stick and a redstone from player-arg
+				give item-arg with name "&fSorter" to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is hopper:
+			if player-arg has 5 iron ingots and a chest and a redstone comparator item:
+				remove 5 iron ingots and a chest and a redstone comparator item from player-arg
+				give item-arg with name "&fSorter" to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is activator rail:
+			if player-arg has 6 iron ingots and 2 stick and a redstone torch:
+				remove 6 iron ingots and 2 stick and a redstone torch from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is detector rail:
+			if player-arg has 6 iron ingots and a stick and a stone plate:
+				remove 6 iron ingots and a stick and a stone plate from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is powered rail:
+			if player-arg has 6 gold ingots and a stick and a redstone:
+				remove 6 gold ingots and a stick and a redstone from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is rail:
+			if player-arg has 6 iron ingots and a stick:
+				remove 6 iron ingots and a stick from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is bonemeal:
+			if player-arg has 1 bone:
+				remove bone from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is compass:
+			if player-arg has 4 iron ingot and a redstone:
+				remove 4 iron ingot and a redstone from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is clock:
+			if player-arg has 4 gold ingot and a redstone:
+				remove 4 gold ingot and a redstone from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is lead:
+			if player-arg has 4 string and a slimeball:
+				remove 4 string and a slimeball from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is 4 arrows:
+			if player-arg has a flint and a stick and a feather:
+				remove a flint and a stick and a feather from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is trapped chest:
+			if player-arg has a chest and a tripwire hook:
+				remove a chest and a tripwire hook from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is shears:
+			if player-arg has 2 iron ingots:
+				remove 2 iron ingots from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is 3 paper:
+			if player-arg has 3 sugar cane:
+				remove 3 sugar cane from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is fishing rod:
+			if player-arg has 3 stick and 2 string:
+				remove 3 stick and 2 string from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is iron axe:
+			if player-arg has 3 iron ingots and a stick:
+				remove 3 iron ingots and a stick from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is gold axe:
+			if player-arg has 3 gold ingots and a stick:
+				remove 3 gold ingots and a stick from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is wood axe:
+			if player-arg has 3 wood planks and a stick:
+				remove 3 wood planks and a stick from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is 9 gold ingots:
+			if player-arg has 1 gold block:
+				remove 1 gold block from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is 9 iron ingots:
+			if player-arg has 1 iron block:
+				remove 1 iron block from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is diamond axe:
+			if player-arg has 3 diamonds and a stick:
+				remove 3 diamonds and a stick from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is diamond helmet:
+			if player-arg has 5 diamonds:
+				remove 5 diamonds from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is diamond chestplate:
+			if player-arg has 8 diamonds:
+				remove 8 diamonds from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is diamond leggings:
+			if player-arg has 7 diamonds:
+				remove 7 diamonds from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is diamond boots:
+			if player-arg has 4 diamonds:
+				remove 4 diamonds from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is diamond pickaxe:
+			if player-arg has 2 diamonds and a stick:
+				remove 3 diamonds and a stick from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is diamond shovel:
+			if player-arg has 1 diamonds and a stick:
+				remove 2 diamonds and a stick from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is iron pickaxe:
+			if player-arg has 3 iron ingot and a stick:
+				remove 3 iron ingots and a stick from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is iron shovel:
+			if player-arg has 1 iron ingot and a stick:
+				remove 1 iron ingot and a stick from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is diamond sword:
+			if player-arg has 2 diamonds and a stick:
+				remove 2 diamonds and a stick from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is iron sword:
+			if player-arg has 2 iron ingots and a stick:
+				remove 2 iron ingots and a stick from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is wooden sword:
+			if player-arg has 2 wooden planks and a stick:
+				remove 2 wooden planks and a stick from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is stone sword:
+			if player-arg has 2 cobble and a stick:
+				remove 2 cobble and a stick from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is gold sword:
+			if player-arg has 2 gold ingots and a stick:
+				remove 2 gold ingots and a stick from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is 8 cookies:
+			if player-arg has 2 wheat and a cocoa beans:
+				remove 2 wheat and a cocoa beans from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is 2 sticks:
+			if player-arg has 2 wooden planks:
+				remove 2 wooden planks from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is wooden button:
+			if player-arg has wooden plank:
+				remove wooden plank from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is 4 oak wooden planks:
+			if player-arg has a oak log:
+				remove a oak log from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is 4 birch wooden planks:
+			if player-arg has a birch log:
+				remove a birch log from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is 4 redwood wooden planks:
+			if player-arg has a redwood log:
+				remove a redwood log from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is 4 jungle wooden planks:
+			if player-arg has a jungle log:
+				remove a jungle log from player-arg  
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is 4 acacia wooden planks:
+			if player-arg has a acacia log:
+				remove a acacia log from player-arg  
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				execute console command "/quickcraft %player-arg%"
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is 4 dark oak wooden planks:
+			if player-arg has a dark oak log:
+				remove a dark oak log from player-arg  
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is 4 torches:
+			if player-arg has a coal item and a stick:
+				remove a coal item and a stick from player-arg  
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is crafting table:
+			if player-arg has 4 wooden planks:
+				remove 4 wooden planks from player-arg  
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is furnace off:
+			if player-arg has 9 cobble:
+				remove 9 cobble from player-arg  
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is a chest:
+			if player-arg has 9 wooden planks:
+				remove 9 wooden planks from player-arg  
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is 3 ladders:
+			if player-arg has 7 sticks:
+				remove 7 sticks from player-arg  
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is 3 fence:
+			if player-arg has 4 wooden planks and 2 sticks:
+				remove 4 wooden planks and 2 sticks from player-arg  
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is boat:
+			if player-arg has 5 wooden planks:
+				remove 5 wooden planks from player-arg  
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is glowstone:
+			if player-arg has 4 glowstone dust:
+				remove 4 glowstone dust from player-arg  
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is painting item:
+			if player-arg has 8 sticks and a wool:
+				remove 8 sticks and a wool from player-arg  
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is bed:
+			if player-arg has 3 wooden planks and 3 wool:
+				remove 3 wooden planks and 3 wool from player-arg  
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is bow:
+			if player-arg has 3 sticks and 3 strings:
+				remove 3 sticks and 3 strings from player-arg  
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is a flint and steel:
+			if player-arg has iron ingot and flint:
+				remove iron ingot and flint from player-arg  
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is bucket:
+			if player-arg has 3 iron ingots:
+				remove 3 iron ingots from player-arg  
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				execute console command "/quickcraft %player-arg%"
+on inventory close:
+	inventory name of player's current inventory is {@menuname}
+	clear {craftlist.%player%::*}
+command /quickcraftdebug:
+	permission: quickcraft.debug
+	trigger:
+		loop {craftlist.%player%::*}:
+			send "%loop-index% : %loop-value%"
+	
+
