@@ -1,8 +1,11 @@
+options:
+	outPutConfig: yes
+
 #Please don't edit anything below this line unless you know what you are doing!	
 variables:
 	{_craftam} = 0
 	{_loop} = 0
-	
+
 on script load:
 	if existence of "plugins/QuickCraft" is false:
 		create folder "plugins/QuickCraft"
@@ -15,6 +18,11 @@ on script load:
 		set {itemsMissing} to single value "faq1Name" get of "plugins/LegitLandFAQ/config.yml" parsed as a string
 		wait 1 tick
 		set {sneakRightClick} to single value "faq1Lore" get of "plugins/LegitLandFAQ/config.yml" parsed as a boolean
+		if {@outputConfig} is yes:
+			if player is an op:
+				message "&eConfig Setting &dMenu Name &eset to &d{menuName}"
+				message "&eConfig Setting &dItems Missing &eset to &d{itemsMissing}"
+				message "&eConfig Setting &dSneak Right Click &eset to &d{sneakRightClick}"
 		stop
 	if existence of "plugins/QuickCraft/config/yml" is true:
 		wait 5 ticks
@@ -23,6 +31,11 @@ on script load:
 		set {itemsMissing} to single value "faq1Name" get of "plugins/LegitLandFAQ/config.yml" parsed as a string
 		wait 1 tick
 		set {sneakRightClick} to single value "faq1Lore" get of "plugins/LegitLandFAQ/config.yml" parsed as a boolean
+		if {@outputConfig} is yes:
+			if player is an op:
+				message "&eConfig Setting &dMenu Name &eset to &d{menuName}"
+				message "&eConfig Setting &dItems Missing &eset to &d{itemsMissing}"
+				message "&eConfig Setting &dSneak Right Click &eset to &d{sneakRightClick}"
 		stop
 
 
