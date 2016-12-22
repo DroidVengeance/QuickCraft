@@ -14,6 +14,10 @@ it will then remove the required matierials from the player's inventory and give
     This is still under development!!!! Not ALL items have been added. Basic game items would be a waste of time to add to this as it's 
 just as easy to craft them in your 4x4 inventory screen. BUT, if you would like certain items added, just ask!
 
+CONTACT:
+Email - droidvengeance@gmail.com
+Website - http://droidvengeance.com/#contact
+
 
 
 
