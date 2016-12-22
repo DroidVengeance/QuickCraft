@@ -1,5 +1,5 @@
 options:
-	outPutConfig: yes
+	outputConfig: yes
 
 #Please don't edit anything below this line unless you know what you are doing!	
 variables:
