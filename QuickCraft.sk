@@ -1,6 +1,3 @@
-#QuickCraft
-#By: DroidVengeance
-
 #Please don't edit anything below this line unless you know what you are doing!	
 variables:
 	{_craftam} = 0
@@ -227,6 +224,48 @@ command /quickcraft <player>:
 command /quickcraftrun <player> <item>:
 	permission: {quickcraftPermission}
 	trigger:
+		if item-arg is wood shovel:
+			if player-arg has 1 wooden plank and 2 stick:
+				remove 1 wooden plank and 2 stick from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"
+		if item-arg is stone shovel:
+			if player-arg has 1 cobblestone and 2 stick:
+				remove 1 cobblestone and 2 stick from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"	
+		if item-arg is gold shovel:
+			if player-arg has 1 gold ingots and 2 stick:
+				remove 1 gold ingots and 2 stick from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"	
+		if item-arg is gold pickaxe:
+			if player-arg has 3 gold ingots and a stick:
+				remove 3 gold ingots and a stick from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"	
+		if item-arg is wooden pickaxe:
+			if player-arg has 3 wooden planks and a stick:
+				remove 3 wooden planks and a stick from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"	
+		if item-arg is stone pickaxe:
+			if player-arg has 3 cobblestone and a stick:
+				remove 3 cobblestone and a stick from player-arg
+				give item-arg to player-arg
+				clear {craftlist.%player-arg%::*}
+				wait 1 tick
+				execute console command "/quickcraft %player-arg%"	
 		if item-arg is iron helmet:
 			if player-arg has 5 iron ingot:
 				remove 5 iron ingot from player-arg
