@@ -4,10 +4,10 @@
  
 #Main Options
 menuName:
-    "&1Crafting Recipes"
+    Crafting Recipes
       
 itemsMissing:
-    "&cYou don't have the required items to craft that!"
+    &cYou don't have the required items to craft that!
      
 sneakRightClick:
     true
