@@ -1,6 +1,3 @@
-options:
-	outputConfig: yes
-
 #Please don't edit anything below this line unless you know what you are doing!	
 variables:
 	{_craftam} = 0
@@ -18,6 +15,8 @@ on script load:
 		set {itemsMissing} to single value "itemsMissing" get of "plugins/QuickCraft/config.yml" parsed as a string
 		wait 1 tick
 		set {sneakRightClick} to single value "sneakRightClick" get of "plugins/QuickCraft/config.yml" parsed as a boolean
+		wait 1 tick
+		set {quickcraftPermission} to single value "quickcraftPermission" get of "plugins/QuickCraft/config.yml" parsed as a boolean
 		stop
 	if existence of "plugins/QuickCraft/config/yml" is true:
 		wait 5 ticks
@@ -26,6 +25,8 @@ on script load:
 		set {itemsMissing} to single value "itemsMissing" get of "plugins/QuickCraft/config.yml" parsed as a string
 		wait 1 tick
 		set {sneakRightClick} to single value "sneakRightClick" get of "plugins/QuickCraft/config.yml" parsed as a boolean
+		wait 1 tick
+		set {quickcraftPermission} to single value "quickcraftPermission" get of "plugins/QuickCraft/config.yml" parsed as a boolean
 		stop
 
 
@@ -33,7 +34,7 @@ on script load:
 
 #-----------------------------------------------------------------
 on rightclick on a crafting table:
-	if player has permission "quickcraft.use":
+	if player has permission "%{quickcraftPermission}%":
 		if {sneakRightClick} is true:
 			player is sneaking
 			cancel event
