@@ -18,11 +18,6 @@ on script load:
 		set {itemsMissing} to single value "itemsMissing" get of "plugins/QuickCraft/config.yml" parsed as a string
 		wait 1 tick
 		set {sneakRightClick} to single value "sneakRightClick" get of "plugins/QuickCraft/config.yml" parsed as a boolean
-		if {@outputConfig} is yes:
-			if player is an op:
-				message "&eConfig Setting &dMenu Name &eset to &d{menuName}"
-				message "&eConfig Setting &dItems Missing &eset to &d{itemsMissing}"
-				message "&eConfig Setting &dSneak Right Click &eset to &d{sneakRightClick}"
 		stop
 	if existence of "plugins/QuickCraft/config/yml" is true:
 		wait 5 ticks
@@ -31,11 +26,6 @@ on script load:
 		set {itemsMissing} to single value "itemsMissing" get of "plugins/QuickCraft/config.yml" parsed as a string
 		wait 1 tick
 		set {sneakRightClick} to single value "sneakRightClick" get of "plugins/QuickCraft/config.yml" parsed as a boolean
-		if {@outputConfig} is yes:
-			if player is an op:
-				message "&eConfig Setting &dMenu Name &eset to &d{menuName}"
-				message "&eConfig Setting &dItems Missing &eset to &d{itemsMissing}"
-				message "&eConfig Setting &dSneak Right Click &eset to &d{sneakRightClick}"
 		stop
 
 
@@ -50,7 +40,7 @@ on rightclick on a crafting table:
 			make console execute command "/quickcraft %player%"
 		else:
 			cancel event
-      
+	  
 #-----------------
 #RECIPES:
 #-----------------
@@ -123,11 +113,11 @@ command /quickcraft <player>:
 			add 3 fence to {craftlist.%player-arg%::*}
 		if player-arg has 5 wooden planks:
 			add boat to {craftlist.%player-arg%::*}
-		if player-arg has 8 sticks and a wool:
+		if player-arg has 8 sticks and a white wool block:
 			add painting item to {craftlist.%player-arg%::*}
 		if player-arg has 4 glowstone dust:
 			add glowstone to {craftlist.%player-arg%::*}
-		if player-arg has 3 wooden planks and 3 wool:
+		if player-arg has 3 wooden planks and 3 white wool block:
 			add bed to {craftlist.%player-arg%::*}
 		if player-arg has 3 sticks and 3 strings:
 			add bow to {craftlist.%player-arg%::*}
@@ -198,14 +188,14 @@ command /quickcraft <player>:
 			add 16 rail to {craftlist.%player-arg%::*}
 		if player-arg has 6 gold ingots and a stick and a redstone:
 			add 6 powered rail to {craftlist.%player-arg%::*}
-		if player-arg has 6 iron ingots and a stick and a stone plate:
+		if player-arg has 6 iron ingots and a stick and a stone pressure plate:
 			add 6 detector rail to {craftlist.%player-arg%::*}
-		if player-arg has 6 iron ingots and 2 stick and a redstone torch:
+		if player-arg has 6 iron ingots and 2 stick and a redstone torch off:
 			add 6 activator rail to {craftlist.%player-arg%::*}
 		if player-arg has 5 iron ingots and a chest and a redstone comparator item:
 			add hopper named "&fSorter" to {craftlist.%player-arg%::*}
 		if player-arg has a stick and a redstone:
-			add redstone torch to {craftlist.%player-arg%::*}
+			add redstone torch off to {craftlist.%player-arg%::*}
 		if player-arg has 3 paper and a leather:
 			add book to {craftlist.%player-arg%::*}
 		if player-arg has 5 iron ingots:
@@ -282,7 +272,7 @@ command /quickcraftrun <player> <item>:
 				clear {craftlist.%player-arg%::*}
 				wait 1 tick
 				execute console command "/quickcraft %player-arg%"
-		if item-arg is redstone torch:
+		if item-arg is redstone torch off:
 			if player-arg has a stick and a redstone:
 				remove a stick and a redstone from player-arg
 				give item-arg with name "&fSorter" to player-arg
@@ -297,15 +287,15 @@ command /quickcraftrun <player> <item>:
 				wait 1 tick
 				execute console command "/quickcraft %player-arg%"
 		if item-arg is activator rail:
-			if player-arg has 6 iron ingots and 2 stick and a redstone torch:
-				remove 6 iron ingots and 2 stick and a redstone torch from player-arg
+			if player-arg has 6 iron ingots and 2 stick and a redstone torch off:
+				remove 6 iron ingots and 2 stick and a redstone torch off from player-arg
 				give item-arg to player-arg
 				clear {craftlist.%player-arg%::*}
 				wait 1 tick
 				execute console command "/quickcraft %player-arg%"
 		if item-arg is detector rail:
-			if player-arg has 6 iron ingots and a stick and a stone plate:
-				remove 6 iron ingots and a stick and a stone plate from player-arg
+			if player-arg has 6 iron ingots and a stick and a stone pressure plate:
+				remove 6 iron ingots and a stick and a stone pressure plate from player-arg
 				give item-arg to player-arg
 				clear {craftlist.%player-arg%::*}
 				wait 1 tick
@@ -620,14 +610,14 @@ command /quickcraftrun <player> <item>:
 				clear {craftlist.%player-arg%::*}
 				execute console command "/quickcraft %player-arg%"
 		if item-arg is painting item:
-			if player-arg has 8 sticks and a wool:
-				remove 8 sticks and a wool from player-arg  
+			if player-arg has 8 sticks and a white wool block:
+				remove 8 sticks and a white wool block from player-arg  
 				give item-arg to player-arg
 				clear {craftlist.%player-arg%::*}
 				execute console command "/quickcraft %player-arg%"
-		if item-arg is bed:
-			if player-arg has 3 wooden planks and 3 wool:
-				remove 3 wooden planks and 3 wool from player-arg  
+		if item-arg is bed block:
+			if player-arg has 3 wooden planks and 3 white wool block:
+				remove 3 wooden planks and 3 white wool block from player-arg  
 				give item-arg to player-arg
 				clear {craftlist.%player-arg%::*}
 				execute console command "/quickcraft %player-arg%"
