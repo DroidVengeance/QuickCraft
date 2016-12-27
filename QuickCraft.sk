@@ -13,11 +13,11 @@ on script load:
 		create file "plugins/QuickCraft/config.yml"
 		download from "https://raw.githubusercontent.com/DroidVengeance/QuickCraft/master/config.yml" to "plugins/QuickCraft/config.yml"
 		wait 5 ticks
-		set {menuName} to single value "faq1Item" get of "plugins/LegitLandFAQ/config.yml" parsed as an item
+		set {menuName} to single value "menuName" get of "plugins/QuickCraft/config.yml" parsed as an item
 		wait 1 tick
-		set {itemsMissing} to single value "faq1Name" get of "plugins/LegitLandFAQ/config.yml" parsed as a string
+		set {itemsMissing} to single value "itemsMissing" get of "plugins/QuickCraft/config.yml" parsed as a string
 		wait 1 tick
-		set {sneakRightClick} to single value "faq1Lore" get of "plugins/LegitLandFAQ/config.yml" parsed as a boolean
+		set {sneakRightClick} to single value "sneakRightClick" get of "plugins/QuickCraft/config.yml" parsed as a boolean
 		if {@outputConfig} is yes:
 			if player is an op:
 				message "&eConfig Setting &dMenu Name &eset to &d{menuName}"
@@ -26,11 +26,11 @@ on script load:
 		stop
 	if existence of "plugins/QuickCraft/config/yml" is true:
 		wait 5 ticks
-		set {menuName} to single value "faq1Item" get of "plugins/LegitLandFAQ/config.yml" parsed as an item
+		set {menuName} to single value "menuName" get of "plugins/QuickCraft/config.yml" parsed as an item
 		wait 1 tick
-		set {itemsMissing} to single value "faq1Name" get of "plugins/LegitLandFAQ/config.yml" parsed as a string
+		set {itemsMissing} to single value "itemsMissing" get of "plugins/QuickCraft/config.yml" parsed as a string
 		wait 1 tick
-		set {sneakRightClick} to single value "faq1Lore" get of "plugins/LegitLandFAQ/config.yml" parsed as a boolean
+		set {sneakRightClick} to single value "sneakRightClick" get of "plugins/QuickCraft/config.yml" parsed as a boolean
 		if {@outputConfig} is yes:
 			if player is an op:
 				message "&eConfig Setting &dMenu Name &eset to &d{menuName}"
@@ -657,5 +657,3 @@ command /quickcraftdebug:
 	trigger:
 		loop {craftlist.%player%::*}:
 			send "%loop-index% : %loop-value%"
-	
-
