@@ -10,7 +10,7 @@ on script load:
 		create file "plugins/QuickCraft/config.yml"
 		download from "https://raw.githubusercontent.com/DroidVengeance/QuickCraft/master/config.yml" to "plugins/QuickCraft/config.yml"
 		wait 5 ticks
-		set {menuName} to single value "menuName" get of "plugins/QuickCraft/config.yml" parsed as an item
+		set {quickcraftMenuName} to single value "menuName" get of "plugins/QuickCraft/config.yml" parsed as a string
 		wait 1 tick
 		set {itemsMissing} to single value "itemsMissing" get of "plugins/QuickCraft/config.yml" parsed as a string
 		wait 1 tick
@@ -20,7 +20,7 @@ on script load:
 		stop
 	if existence of "plugins/QuickCraft/config/yml" is true:
 		wait 5 ticks
-		set {menuName} to single value "menuName" get of "plugins/QuickCraft/config.yml" parsed as an item
+		set {quickcraftMenuName} to single value "menuName" get of "plugins/QuickCraft/config.yml" parsed as a string
 		wait 1 tick
 		set {itemsMissing} to single value "itemsMissing" get of "plugins/QuickCraft/config.yml" parsed as a string
 		wait 1 tick
@@ -210,10 +210,10 @@ command /quickcraft <player>:
 		loop {craftlist.%player-arg%::*}:
 			add 1 to {_craftam}
 		if {_craftam} is below or equal to 9:
-			open chest with 1 row named {menuName} to player-arg
+			open chest with 1 row named "%{quickcraftMenuName}%" to player-arg
 			wait 2 ticks
 		if {_craftam} is more than 9:
-			open chest with rounded up {_craftam} / 9 rows named {menuName} to player-arg
+			open chest with rounded up {_craftam} / 9 rows named "%{quickcraftMenuName}%" to player-arg
 			wait 2 ticks
 		loop {craftlist.%player-arg%::*}:
 			format slot {_loop} of player-arg with loop-value to run "quickcraftrun %player-arg% %loop-value%"
@@ -222,7 +222,7 @@ command /quickcraft <player>:
 #COMMANDS:
 #-----------------
 command /quickcraftrun <player> <item>:
-	permission: quickcraft.use
+	permission: {quickcraftPermission}
 	trigger:
 		if item-arg is iron helmet:
 			if player-arg has 5 iron ingot:
@@ -641,7 +641,7 @@ command /quickcraftrun <player> <item>:
 				clear {craftlist.%player-arg%::*}
 				execute console command "/quickcraft %player-arg%"
 on inventory close:
-	inventory name of player's current inventory is {menuName}
+	inventory name of player's current inventory is "%{quickcraftMenuName}%"
 	clear {craftlist.%player%::*}
 command /quickcraftdebug:
 	permission: quickcraft.debug
