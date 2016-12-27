@@ -11,4 +11,7 @@ itemsMissing:
      
 sneakRightClick:
     true
+    
+quickcraftPermission:
+    quickcraft.use
 #Config ends
