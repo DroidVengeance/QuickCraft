@@ -4,9 +4,9 @@ variables:
 	{_loop} = 0
 
 on script load:
-	if existence of "plugins/QuickCraft" is false:
+	if folder "plugins/QuickCraft" doesn't exists:
 		create folder "plugins/QuickCraft"
-	if existence of "plugins/QuickCraft/config.yml" is false:
+	if folder "plugins/QuickCraft/config.yml" doesn't exists:
 		create file "plugins/QuickCraft/config.yml"
 		download from "https://raw.githubusercontent.com/DroidVengeance/QuickCraft/master/config.yml" to "plugins/QuickCraft/config.yml"
 		wait 5 ticks
@@ -18,7 +18,7 @@ on script load:
 		wait 1 tick
 		set {quickcraftPermission} to single value "quickcraftPermission" get of "plugins/QuickCraft/config.yml" parsed as a boolean
 		stop
-	if existence of "plugins/QuickCraft/config/yml" is true:
+	if folder "plugins/QuickCraft/config/yml" doesn't exists:
 		wait 5 ticks
 		set {quickcraftMenuName} to single value "menuName" get of "plugins/QuickCraft/config.yml" parsed as a string
 		wait 1 tick
