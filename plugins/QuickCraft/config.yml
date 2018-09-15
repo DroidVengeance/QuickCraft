@@ -1,0 +1,19 @@
+#________        .__        __   _________                _____  __   
+#\_____  \  __ __|__| ____ |  | _\_   ___ \____________ _/ ____\/  |_ 
+# /  / \  \|  |  \  |/ ___\|  |/ /    \  \/\_  __ \__  \\   __\\   __\
+#/   \_/.  \  |  /  \  \___|    <\     \____|  | \// __ \|  |   |  |  
+#\_____\ \_/____/|__|\___  >__|_ \\______  /|__|  (____  /__|   |__|  
+#       \__>             \/     \/       \/            \/             
+#By: DroidVengeance
+
+version: '2.0'
+ 
+menuName: "Crafting Recipes"
+      
+itemsMissing: "&cYou don't have the required items to craft that!"
+     
+sneakRightClick: 'true'
+    
+quickcraftPermission: "quickcraft.use"
+
+#Config ends

@@ -1,3 +1,11 @@
+#________        .__        __   _________                _____  __   
+#\_____  \  __ __|__| ____ |  | _\_   ___ \____________ _/ ____\/  |_ 
+# /  / \  \|  |  \  |/ ___\|  |/ /    \  \/\_  __ \__  \\   __\\   __\
+#/   \_/.  \  |  /  \  \___|    <\     \____|  | \// __ \|  |   |  |  
+#\_____\ \_/____/|__|\___  >__|_ \\______  /|__|  (____  /__|   |__|  
+#       \__>             \/     \/       \/            \/             
+#By: DroidVengeance
+
 #Please don't edit anything below this line unless you know what you are doing!	
 variables:
 	{_craftam} = 0
@@ -8,7 +16,7 @@ on script load:
 		create folder "plugins/QuickCraft"
 	if folder "plugins/QuickCraft/config.yml" doesn't exists:
 		create file "plugins/QuickCraft/config.yml"
-		download from "https://raw.githubusercontent.com/DroidVengeance/QuickCraft/master/config.yml" to "plugins/QuickCraft/config.yml"
+		download from "https://bit.ly/2Oosq4O" to "plugins/QuickCraft/config.yml"
 		wait 5 ticks
 		set {quickcraftMenuName} to single value "menuName" get of "plugins/QuickCraft/config.yml" parsed as a string
 		wait 1 tick
